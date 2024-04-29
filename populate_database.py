@@ -2,6 +2,8 @@ import sys
 from api import EthereumAPI
 from constants import endpoint_url
 from database import create_database, connect_database, populate_database
+
+
 def main():
     create_database("ethereum.db")
     connection = connect_database("ethereum.db")

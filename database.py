@@ -131,5 +131,3 @@ def get_largest_block(db):
         }
     else:
         return "No result found."
-
-

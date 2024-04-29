@@ -1,10 +1,9 @@
 from database import get_largest_block
 
+
 def main():
     database_path = "ethereum.db"
     result = get_largest_block(database_path)
-
-    print(result)
 
     # save result to file
     with open("result.txt", "w") as file:
@@ -13,6 +12,7 @@ def main():
                 file.write(f"{key}: {value}\n")
         else:
             file.write(str(result))
+
 
 if __name__ == "__main__":
     main()
