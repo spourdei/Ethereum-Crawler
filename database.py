@@ -1,7 +1,9 @@
 import sqlite3
+
+
 def create_database():
     # connect and initialize  the SQLite database
-    conn = sqlite3.connect('ethereum.db')
+    conn = sqlite3.connect("ethereum.db")
 
     # create a cursor object
     cursor = conn.cursor()
@@ -38,5 +40,6 @@ def create_database():
     print("Database and tables successfully created.")
     conn.close()
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     create_database()

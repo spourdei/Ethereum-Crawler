@@ -63,15 +63,20 @@ class EthereumAPI:
 
         # create batches whilst respecting max_requests and then it sends the requests
         for start in range(from_block, to_block + 1, max_requests):
-            end = min(start + max_requests, to_block + 1) # calculate end of range
+            end = min(start + max_requests, to_block + 1)  # calculate end of range
             batches = []
-            for block_number in range(start, end): # iterate through current batch and append to current payload
+            for block_number in range(
+                start, end
+            ):  # iterate through current batch and append to current payload
                 batches.append(
                     {
                         "jsonrpc": "2.0",
                         "method": "eth_getBlockByNumber",
-                        "params": [hex(block_number), include_transactions], # convert block number to hex
-                        "id": block_number - from_block, # unique id for each batch
+                        "params": [
+                            hex(block_number),
+                            include_transactions,
+                        ],  # convert block number to hex
+                        "id": block_number - from_block,  # unique id for each batch
                     }
                 )
 
@@ -81,7 +86,7 @@ class EthereumAPI:
             if response:
                 for block_info in response:
                     if "result" in block_info and block_info["result"]:
-                        try: # parse into Block object and error handling
+                        try:  # parse into Block object and error handling
                             blocks[block_info["id"] + from_block] = Block(
                                 **block_info["result"]
                             )
@@ -95,4 +100,3 @@ class EthereumAPI:
                 time.sleep(1)
 
         return blocks
-
