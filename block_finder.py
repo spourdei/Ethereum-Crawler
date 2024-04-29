@@ -1,7 +1,6 @@
 from database import get_largest_block
 
-if __name__ == "__main__":
-
+def main():
     database_path = "ethereum.db"
     result = get_largest_block(database_path)
 
@@ -13,4 +12,7 @@ if __name__ == "__main__":
             for key, value in result.items():
                 file.write(f"{key}: {value}\n")
         else:
-            file.write(result)
+            file.write(str(result))
+
+if __name__ == "__main__":
+    main()
