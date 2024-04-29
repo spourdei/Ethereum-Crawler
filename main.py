@@ -1,11 +1,16 @@
-from api import EthereumAPI
-from constants import endpoint_url
+from database import get_largest_block
 
 if __name__ == "__main__":
 
-    # create an instance of EthereumAPI
-    ethereum_api = EthereumAPI(endpoint_url)
+    database_path = "ethereum.db"
+    result = get_largest_block(database_path)
 
-    # define ethereum block range
-    start_block = 18908800
-    end_block = 18909050
+    print(result)
+
+    # save result to file
+    with open("result.txt", "w") as file:
+        if isinstance(result, dict):
+            for key, value in result.items():
+                file.write(f"{key}: {value}\n")
+        else:
+            file.write(result)
