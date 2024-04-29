@@ -129,7 +129,7 @@ def get_largest_block(db):
 
     if result:
         return {
-            "Block Number": int(result[0], 16), # convert to int and return result
+            "Block Number": int(result[0], 16),  # convert to int and return result
             "Total Volume Transferred": result[1],
         }
     else:
