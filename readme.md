@@ -54,3 +54,5 @@ of the block timestamps, rather than embedding fixed values directly in the SQL 
 * Simplicity: SQLite is a file-based database that does not require a separate server to run. 
 * Ease of Setup: This ease of setup is particularly advantageous for this project that needs to be quickly deployable and easily maintainable.
 * Portability: Being file-based, it makes sharing this project much simpler and easier.
+
+If this project was to be scalable, I would have opted for PostgreSQL instead.
