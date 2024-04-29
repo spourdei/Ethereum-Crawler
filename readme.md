@@ -5,7 +5,13 @@ range and populates a database with it.
 
 ## Getting Started
 
-We need to create and initialize a database first. We can do this by running
+Create the .env file in the project directory and replace the endpoint_url with your url. It will look like: 
+
+```
+ENDPOINT_URL=https://your_endpoint_here
+```
+
+We then need to create and initialize a database first. We can do this by running
 ```
 poetry run python database.py from_block to_block
 ```
