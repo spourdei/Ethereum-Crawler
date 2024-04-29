@@ -5,6 +5,12 @@ range and populates a database with it.
 
 ## Getting Started
 
+To get started please make sure you have python 3.11 and poetry installed. Run the following:
+
+```
+poetry install
+```
+
 Create the .env file in the project directory and replace the endpoint_url with your url. It will look like: 
 
 ```
